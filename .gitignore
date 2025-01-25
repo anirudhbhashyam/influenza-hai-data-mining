@@ -1,3 +1,5 @@
 *.pdf
 pdf_data
 venv
+.ruff_cache
+__pycache__
