@@ -52,6 +52,8 @@ async def main() -> int:
     url = "https://www.crick.ac.uk/research/platforms-and-facilities/worldwide-influenza-centre/annual-and-interim-reports"
     pdf_links = await get_pdf_links(url)
     out_dir = Path("pdf_data").resolve()
+    if not out_dir.exists():
+        out_dir.mkdir()
     print(f"Found {len(pdf_links)} PDFs.")
     await download_pdfs(pdf_links, out_dir)
     return 0
